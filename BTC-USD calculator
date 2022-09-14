@@ -4,7 +4,10 @@ dollar_str = input("How much $ do you have?")
 try:
     btc_int = int(btc_str)
     dollar_int = int(dollar_str)
-except ValueError:
+    if btc_int == 0:
+        print("BTC depreciated!")
+    else:
+        total_btc_buy = dollar_int/btc_int
+        print(f"You can buy {total_btc_buy:.7f} BTC")
+except:
     print("You must enter a number!")
-total_btc_buy = dollar_int/btc_int
-print(f"You can buy {total_btc_buy:.7f} BTC")
